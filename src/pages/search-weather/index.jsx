@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../../../env.contanst";
+import { AreaGraph } from "../../components/area-graph";
 import { Button } from "../../components/button";
 import { Input } from "../../components/input";
 import { WeatherReport } from "../../components/weather-report";
@@ -65,6 +66,7 @@ export default function SearchWeather() {
           Please search for a city, use above input box and click search...
         </div>
       )}
+      <AreaGraph city={cityName} />
     </div>
   );
 }
