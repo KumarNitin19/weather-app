@@ -11,7 +11,7 @@ export const AreaGraph = ({ city = "" }) => {
   };
 
   const width = 960 - margins.left - margins.right;
-  const height = 960 - margins.top - margins.bottom;
+  const height = 500 - margins.top - margins.bottom;
 
   const x = d3.scaleTime().range([0, width]);
   const y = d3.scaleLinear().range([height, 0]);
@@ -19,7 +19,7 @@ export const AreaGraph = ({ city = "" }) => {
   const xAxis = d3.axisBottom().scale(x);
   const yAxis = d3.axisLeft().scale(y);
 
-  const parseTime = d3.timeFormat("%b %d");
+  const parseTime = d3.timeParse("%Y-%m-%d");
 
   const svg = d3
     .select("#area-graph")
@@ -43,7 +43,13 @@ export const AreaGraph = ({ city = "" }) => {
   }
 
   const plotGraph = (data) => {
-    x.domain(d3.extent(data, (d) => parseTime(new Date(d.dt_txt))));
+    console.log(data);
+    x.domain(
+      d3.extent(data, (d) => {
+        const date = new Date(d.dt_txt);
+        return date;
+      })
+    );
 
     y.domain([0, d3.max(data, (d) => d.main.temp)]);
 
@@ -51,18 +57,21 @@ export const AreaGraph = ({ city = "" }) => {
     svg.append("g").call(yAxis);
 
     svg
-      .append("g")
       .append("path")
       .datum(data)
-      .attr("fill", "blue")
-      .attr("stroke", "black")
+      .attr("fill", "#cce5df")
+      .attr("stroke", "#69b3a2")
       .attr("stroke-width", 2)
       .attr(
         "d",
         d3
           .area()
-          .x((d) => parseTime(d.dt_txt))
-          .y((d) => d.main.temp)
+          .x((d) => {
+            const date = new Date(d.dt_txt);
+            return x(date);
+          })
+          .y0(y(0))
+          .y1((d) => y(d.main.temp))
       );
   };
 
