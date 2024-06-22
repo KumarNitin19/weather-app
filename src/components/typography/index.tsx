@@ -15,33 +15,39 @@ type Props = {
   children: React.ReactNode | string;
   fontFamily: "oswald" | "montserrat";
   className?: string;
+  fontWeight:
+    | "100"
+    | "200"
+    | "300"
+    | "400"
+    | "500"
+    | "600"
+    | "700"
+    | "800"
+    | "900";
 };
 
 export const Typography: React.FC<Props> = (props) => {
-  //   const className = props.fontFamily || "montserrat";
+  const {
+    fontFamily = "montserrat",
+    fontSize = "16px",
+    variant = "body1",
+    className = "",
+    color = "#000",
+  } = props;
   const getClassName = () => {
     let className = "";
-    if (props.fontFamily) {
-      className += `${props?.fontFamily} `;
-    } else {
-      className += "montserrat ";
-    }
-    if (props.variant) {
-      className += `${props?.variant} `;
-    } else {
-      className += "body1 ";
-    }
+    className += `${fontFamily} `;
+    className += `${variant} `;
     return className;
   };
   return (
     <div
-      className={`${
-        props.className ? `${props.className} ` : ""
-      }${getClassName()}`}
+      className={`${className ? `${className} ` : ""}${getClassName()}`}
       {...props}
       style={{
-        color: props?.color || "#000",
-        fontSize: props?.fontSize || "16px",
+        color: color || "#000",
+        fontSize: fontSize || "16px",
       }}>
       {props.children}
     </div>
