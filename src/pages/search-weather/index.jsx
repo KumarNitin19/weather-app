@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { API_URL } from "../../../env.contanst";
 import { AreaGraph } from "../../components/area-graph";
 import { Button } from "../../components/button";
+import { CardWrapper } from "../../components/card-wrapper";
 import { Input } from "../../components/input";
+import { PieChart } from "../../components/pie-chart";
 import { Typography } from "../../components/typography";
 import { WeatherReport } from "../../components/weather-report";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
@@ -37,6 +39,8 @@ export default function SearchWeather() {
     }
   }, [cityName]);
 
+  console.log(weatherData);
+
   return (
     <div id="search-weather">
       <div className="search-weather__heading">
@@ -69,7 +73,21 @@ export default function SearchWeather() {
           Please search for a city, use above input box and click search...
         </Typography>
       )}
-      {weatherData?.name && <AreaGraph city={weatherData?.name} />}
+      {weatherData?.name && (
+        <CardWrapper>
+          <AreaGraph city={weatherData?.name} />
+        </CardWrapper>
+      )}
+
+      <CardWrapper>
+        <div>
+          <div>
+            <Typography>Rain Chance</Typography>
+            <Typography>Low</Typography>
+          </div>
+          <PieChart />
+        </div>
+      </CardWrapper>
     </div>
   );
 }
