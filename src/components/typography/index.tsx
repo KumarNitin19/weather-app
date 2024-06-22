@@ -25,6 +25,7 @@ type Props = {
     | "700"
     | "800"
     | "900";
+  textAlign: "start" | "center" | "auto";
 };
 
 export const Typography: React.FC<Props> = (props) => {
@@ -34,12 +35,14 @@ export const Typography: React.FC<Props> = (props) => {
     className = "",
     color = "#000",
     fontWeight = "400",
+    textAlign = "start",
   } = props;
   const getClassName = () => {
     let className = "";
     className += `${fontFamily} `;
     className += `${variant} `;
-    className += `font-${fontWeight}`;
+    className += `font-${fontWeight} `;
+    className += `text-${textAlign}`;
     return className;
   };
   return (
