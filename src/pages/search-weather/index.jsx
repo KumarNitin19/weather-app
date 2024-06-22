@@ -40,7 +40,7 @@ export default function SearchWeather() {
   return (
     <div id="search-weather">
       <div className="search-weather__heading">
-        <Typography fontFamily="oswald" variant="h6">
+        <Typography fontFamily="oswald" variant="h6" fontWeight="500">
           WEATHERNOW
         </Typography>
       </div>
@@ -65,10 +65,7 @@ export default function SearchWeather() {
           {`Oops, Something went wrong!! Please try again.. :(`}
         </div>
       ) : (
-        // <div className="search-weather__null-state">
-        //   Please search for a city, use above input box and click search...
-        // </div>
-        <Typography variant="subtitle2" color="grey" textAlign="center">
+        <Typography variant="body2" color="grey" fontWeight="500">
           Please search for a city, use above input box and click search...
         </Typography>
       )}

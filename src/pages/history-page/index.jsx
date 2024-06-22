@@ -23,7 +23,9 @@ export const HistoryPage = () => {
             className="btn-rounded"
             title="Go Back"
             onClick={goToHome}>{`<`}</Button>
-          <Typography variant="h6">History</Typography>
+          <Typography variant="h6" fontWeight="500" fontFamily="oswald">
+            History
+          </Typography>
         </div>
         <Button variant="outlined" onClick={clearHistory}>
           Clear History
@@ -37,11 +39,7 @@ export const HistoryPage = () => {
             </WeatherReportCard>
           ))
         ) : (
-          // <div className="summary-logs__null-state">
-          //   Currently, No history present please click back button to go to home
-          //   page and search...
-          // </div>
-          <Typography variant="subtitle2" color="grey">
+          <Typography variant="body2" color="grey" fontWeight="500">
             Currently, No history present please click back button to go to home
             page and search...
           </Typography>
