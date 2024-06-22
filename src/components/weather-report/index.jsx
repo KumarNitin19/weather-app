@@ -3,6 +3,7 @@ import Cloud from "../../assets/icons/clouds.png";
 import Rainy from "../../assets/icons/rainy.png";
 import Haze from "../../assets/icons/haze.png";
 import Sunny from "../../assets/icons/sun.png";
+import { Typography } from "../typography";
 
 const icons = {
   Clouds: Cloud,
@@ -18,7 +19,7 @@ export const WeatherReport = (props) => {
   return (
     <div id="weather-report">
       <div className="weather-report__Heading">
-        <h4>{weatherData?.name}</h4>
+        <Typography variant="h4">{weatherData?.name}</Typography>
       </div>
       <div className="weather-report__details">
         <div className="weather-report__details-temprature">
@@ -29,25 +30,33 @@ export const WeatherReport = (props) => {
             width={75}
           />
           <div className="weather-report__details-temprature-value">
-            <h6>{weatherData?.main?.temp} °C</h6>
-            <div className="caption">{`(${weatherData?.weather[0]?.main})`}</div>
+            <Typography variant="h6">{weatherData?.main?.temp} °C</Typography>
+            <Typography variant="caption">{`(${weatherData?.weather[0]?.main})`}</Typography>
           </div>
         </div>
         <div className="weather-report__details-summary">
           <div className="weather__summary">
-            <div className="key">Max Temp:</div>
+            <Typography variant="subtitle2" color="373737">
+              Max Temp:
+            </Typography>
             <div className="value">{weatherData?.main?.temp_max}</div>
           </div>
           <div className="weather__summary">
-            <div className="key">Min Temp:</div>
+            <Typography variant="subtitle2" color="373737">
+              Min Temp:
+            </Typography>
             <div className="value">{weatherData?.main?.temp_min}</div>
           </div>
           <div className="weather__summary">
-            <div className="key">Humidity:</div>
+            <Typography variant="subtitle2" color="373737">
+              Humidity:
+            </Typography>
             <div className="value">{weatherData?.main?.humidity}</div>
           </div>
           <div className="weather__summary">
-            <div className="key">Wind Speed:</div>
+            <Typography variant="subtitle2" color="373737">
+              Wind Speed:
+            </Typography>
             <div className="value">{weatherData?.wind?.speed}</div>
           </div>
         </div>
