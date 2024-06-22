@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 type Props = {
   variant:
     | "h1"
@@ -11,7 +12,6 @@ type Props = {
     | "body2"
     | "caption";
   color?: string;
-  fontSize?: string;
   children: React.ReactNode | string;
   fontFamily: "oswald" | "montserrat";
   className?: string;
@@ -30,15 +30,16 @@ type Props = {
 export const Typography: React.FC<Props> = (props) => {
   const {
     fontFamily = "montserrat",
-    fontSize = "16px",
     variant = "body1",
     className = "",
     color = "#000",
+    fontWeight = "400",
   } = props;
   const getClassName = () => {
     let className = "";
     className += `${fontFamily} `;
     className += `${variant} `;
+    className += `font-${fontWeight}`;
     return className;
   };
   return (
@@ -47,7 +48,6 @@ export const Typography: React.FC<Props> = (props) => {
       {...props}
       style={{
         color: color || "#000",
-        fontSize: fontSize || "16px",
       }}>
       {props.children}
     </div>
