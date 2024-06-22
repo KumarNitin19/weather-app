@@ -39,7 +39,7 @@ export default function SearchWeather() {
   return (
     <div id="search-weather">
       <div className="search-weather__heading">
-        <h6>Weather</h6>
+        <h6>WEATHERNOW</h6>
       </div>
       <div className="search-weather__city">
         <Input
