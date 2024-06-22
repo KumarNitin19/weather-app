@@ -39,25 +39,33 @@ export const WeatherReport = (props) => {
             <Typography variant="subtitle2" color="373737">
               Max Temp:
             </Typography>
-            <div className="value">{weatherData?.main?.temp_max}</div>
+            <Typography variant="body1" fontSize="18px">
+              {weatherData?.main?.temp_max}
+            </Typography>
           </div>
           <div className="weather__summary">
             <Typography variant="subtitle2" color="373737">
               Min Temp:
             </Typography>
-            <div className="value">{weatherData?.main?.temp_min}</div>
+            <Typography variant="body1" fontSize="18px">
+              {weatherData?.main?.temp_min}
+            </Typography>
           </div>
           <div className="weather__summary">
             <Typography variant="subtitle2" color="373737">
               Humidity:
             </Typography>
-            <div className="value">{weatherData?.main?.humidity}</div>
+            <Typography variant="body1" fontSize="18px">
+              {weatherData?.main?.humidity}
+            </Typography>
           </div>
           <div className="weather__summary">
             <Typography variant="subtitle2" color="373737">
               Wind Speed:
             </Typography>
-            <div className="value">{weatherData?.wind?.speed}</div>
+            <Typography variant="body1" fontSize="18px">
+              {weatherData?.wind?.speed}
+            </Typography>
           </div>
         </div>
       </div>
