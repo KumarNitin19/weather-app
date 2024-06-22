@@ -4,6 +4,7 @@ import { API_URL } from "../../../env.contanst";
 import { AreaGraph } from "../../components/area-graph";
 import { Button } from "../../components/button";
 import { Input } from "../../components/input";
+import { Typography } from "../../components/typography";
 import { WeatherReport } from "../../components/weather-report";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import "./index.css";
@@ -39,7 +40,9 @@ export default function SearchWeather() {
   return (
     <div id="search-weather">
       <div className="search-weather__heading">
-        <h6>WEATHERNOW</h6>
+        <Typography fontFamily="oswald" variant="h6">
+          WEATHERNOW
+        </Typography>
       </div>
       <div className="search-weather__city">
         <Input
@@ -62,9 +65,12 @@ export default function SearchWeather() {
           {`Oops, Something went wrong!! Please try again.. :(`}
         </div>
       ) : (
-        <div className="search-weather__null-state">
+        // <div className="search-weather__null-state">
+        //   Please search for a city, use above input box and click search...
+        // </div>
+        <Typography variant="subtitle2" color="grey" textAlign="center">
           Please search for a city, use above input box and click search...
-        </div>
+        </Typography>
       )}
       {weatherData?.name && <AreaGraph city={weatherData?.name} />}
     </div>
