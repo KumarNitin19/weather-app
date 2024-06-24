@@ -59,8 +59,8 @@ export const AreaGraph = ({ city = "" }) => {
     svg
       .append("path")
       .datum(data)
-      .attr("fill", "#cce5df")
-      .attr("stroke", "#69b3a2")
+      .attr("fill", "#e8e7fd")
+      .attr("stroke", "#7b5ff7")
       .attr("stroke-width", 2)
       .attr(
         "d",
