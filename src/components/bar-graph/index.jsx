@@ -20,35 +20,46 @@ const xAxis = d3.axisBottom().scale(x);
 const yAxis = d3.axisLeft().scale(y);
 
 const BarGraph = ({ city = "" }) => {
-  const drawGraph = useCallback(
-    (weatherData) => {
-      const dataReady = weatherData?.map((item) => ({
-        rainPer: +item.pop * 100,
-        date: item.dt_txt,
-      }));
+  const drawGraph = useCallback((weatherData) => {
+    const dataReady = weatherData?.map((item) => ({
+      rainPer: +item.pop * 100,
+      date: item.dt_txt,
+    }));
 
-      const svg = d3
-        .select("#bar_graph")
-        .append("svg")
-        .attr("height", height + margin.top + margin.bottom)
-        .attr("width", `calc(100% - ${margin.left}px)`)
-        .append("g")
-        .attr("transform", `translate(${margin.left}, ${margin.top})`);
+    const svg = d3
+      .select("#bar_graph")
+      .append("svg")
+      .attr("height", height + margin.top + margin.bottom)
+      .attr("width", `calc(100% - ${margin.left}px)`)
+      .append("g")
+      .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-      x.domain(
-        d3.extent(dataReady, (d) => {
-          const date = new Date(d.date);
-          return date;
-        })
-      );
+    x.domain(
+      d3.extent(dataReady, (d) => {
+        const date = new Date(d.date);
+        return date;
+      })
+    );
 
-      y.domain([0, d3.max(dataReady, (d) => d.rainPer)]);
+    y.domain([0, d3.max(dataReady, (d) => d.rainPer)]);
 
-      svg.append("g").attr("transform", `translate(0, ${height})`).call(xAxis);
-      svg.append("g").call(yAxis);
-    },
-    [city]
-  );
+    svg.append("g").attr("transform", `translate(0, ${height})`).call(xAxis);
+    svg.append("g").call(yAxis);
+
+    svg
+      .selectAll(".bar")
+      .data(dataReady)
+      .enter()
+      .append("rect")
+      .attr("x", (d) => {
+        const date = new Date(d.date);
+        return x(date);
+      })
+      .attr("y", (d) => y(d.rainPer))
+      .attr("height", (d) => height - y(d.rainPer))
+      .attr("width", "10")
+      .attr("fill", "red");
+  }, []);
 
   useEffect(() => {
     if (city) {
