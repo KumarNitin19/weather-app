@@ -11,7 +11,7 @@ const AreaGraph = ({ city = "" }) => {
   };
 
   const width = 960 - margins.left - margins.right;
-  const height = 500 - margins.top - margins.bottom;
+  const height = 300 - margins.top - margins.bottom;
 
   const x = d3.scaleTime().range([0, width]);
   const y = d3.scaleLinear().range([height, 0]);

@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../../../env.contanst";
 import AreaGraph from "../../components/area-graph";
+import BarGraph from "../../components/bar-graph";
 import { Button } from "../../components/button";
 import { CardWrapper } from "../../components/card-wrapper";
 import { Input } from "../../components/input";
@@ -73,12 +74,16 @@ export default function SearchWeather() {
           Please search for a city, use above input box and click search...
         </Typography>
       )}
-      {weatherData?.name && (
+      <div className="widget__first">
+        {weatherData?.name && (
+          <CardWrapper>
+            <AreaGraph city={weatherData?.name} />
+          </CardWrapper>
+        )}
         <CardWrapper>
-          <AreaGraph city={weatherData?.name} />
+          <BarGraph />
         </CardWrapper>
-      )}
-
+      </div>
       <CardWrapper>
         <div>
           <div>

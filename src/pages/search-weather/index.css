@@ -22,3 +22,9 @@
   font-weight: 400;
   text-align: center;
 }
+
+.widget__first {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 24px;
+}

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { memo } from "react";
+import "./index.css";
 
 const margin = {
   top: 25,
@@ -6,14 +7,16 @@ const margin = {
   bottom: 25,
   left: 25,
 };
-const width = d3.select("#bar_graph").style("width");
-const height = 250;
+const parentDiv = document.getElementById("bar_graph");
+const width = parentDiv?.clientWidth;
+const height = 300;
 
-export const BarGraph = () => {
-  const svg = d3
-    .select("#bar_graph")
+const BarGraph = () => {
+  d3.select(parentDiv)
     .append("svg")
     .attr("height", height - margin.top - margin.bottom)
     .attr("width", width - margin.left - margin.right);
   return <div id="bar_graph"></div>;
 };
+
+export default memo(BarGraph);
