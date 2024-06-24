@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
+import { memo } from "react";
 
 const width = 250;
 const height = 250;
 const radius = Math.min(width, height) / 2;
 const donutChartData = { a: 25, b: 75 };
 
-export const PieChart = () => {
+const PieChart = () => {
   const createPieChart = () => {
     const svg = d3
       .select("#pie_chart")
@@ -48,3 +49,5 @@ export const PieChart = () => {
 
   return <div id="pie_chart"></div>;
 };
+
+export default memo(PieChart);

@@ -5,7 +5,7 @@ import AreaGraph from "../../components/area-graph";
 import { Button } from "../../components/button";
 import { CardWrapper } from "../../components/card-wrapper";
 import { Input } from "../../components/input";
-import { PieChart } from "../../components/pie-chart";
+import PieChart from "../../components/pie-chart";
 import { Typography } from "../../components/typography";
 import { WeatherReport } from "../../components/weather-report";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
