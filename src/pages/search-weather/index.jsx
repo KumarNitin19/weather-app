@@ -82,8 +82,12 @@ export default function SearchWeather() {
       <CardWrapper>
         <div>
           <div>
-            <Typography>Rain Chance</Typography>
-            <Typography>Low</Typography>
+            <Typography variant="body2" fontWeight="500" color="#6e6d7a">
+              Rain Chance
+            </Typography>
+            <Typography variant="body2" fontWeight="500" color="#6e6d7a">
+              Low
+            </Typography>
           </div>
           <PieChart />
         </div>
