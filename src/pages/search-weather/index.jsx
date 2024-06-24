@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../../../env.contanst";
-import { AreaGraph } from "../../components/area-graph";
+import AreaGraph from "../../components/area-graph";
 import { Button } from "../../components/button";
 import { CardWrapper } from "../../components/card-wrapper";
 import { Input } from "../../components/input";

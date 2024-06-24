@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { BULK_DATA_API_URL } from "../../../env.contanst";
 
-export const AreaGraph = ({ city = "" }) => {
+const AreaGraph = ({ city = "" }) => {
   const [chartData, setChartData] = useState([]);
   const margins = {
     top: 50,
@@ -93,3 +93,5 @@ export const AreaGraph = ({ city = "" }) => {
 
   return <div id="area-graph"></div>;
 };
+
+export default memo(AreaGraph);
