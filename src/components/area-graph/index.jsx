@@ -1,5 +1,5 @@
 import { memo, useEffect, useState } from "react";
-import { BULK_DATA_API_URL } from "../../../env.contanst";
+import { fetchData } from "../../service/getBulkWeatherData";
 
 const AreaGraph = ({ city = "" }) => {
   const [chartData, setChartData] = useState([]);
@@ -19,8 +19,6 @@ const AreaGraph = ({ city = "" }) => {
   const xAxis = d3.axisBottom().scale(x);
   const yAxis = d3.axisLeft().scale(y);
 
-  const parseTime = d3.timeParse("%Y-%m-%d");
-
   const svg = d3
     .select("#area-graph")
     .append("svg")
@@ -29,21 +27,7 @@ const AreaGraph = ({ city = "" }) => {
     .append("g")
     .attr("transform", `translate(${margins.left}, ${margins.right})`);
 
-  async function fetchData() {
-    const response = await fetch(BULK_DATA_API_URL + city);
-    const data = await response.json();
-
-    const newData = data?.list?.filter((val) => {
-      const hours = new Date(val.dt_txt).getHours();
-      if (hours <= 12 && hours >= 6) {
-        return val;
-      }
-    });
-    return newData;
-  }
-
   const plotGraph = (data) => {
-    console.log(data);
     x.domain(
       d3.extent(data, (d) => {
         const date = new Date(d.dt_txt);
@@ -78,7 +62,7 @@ const AreaGraph = ({ city = "" }) => {
   useEffect(() => {
     if (city) {
       async function getData() {
-        const data = await fetchData();
+        const data = await fetchData(city);
         setChartData(data);
       }
       getData();

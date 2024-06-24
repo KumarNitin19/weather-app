@@ -80,8 +80,8 @@ export default function SearchWeather() {
             <AreaGraph city={weatherData?.name} />
           </CardWrapper>
         )}
-        <CardWrapper>
-          <BarGraph />
+        <CardWrapper id="bar-chart__parent">
+          <BarGraph city={weatherData?.name} />
         </CardWrapper>
       </div>
       <CardWrapper>
