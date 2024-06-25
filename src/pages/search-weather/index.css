@@ -46,6 +46,44 @@
   text-transform: capitalize;
 }
 
-.city__location svg {
-  height: 20px;
+.search-weather__mode {
+  position: relative;
+  height: 40px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border: 1px solid;
+  border-color: #0000000d;
+  border-radius: 32px;
+  cursor: pointer;
+}
+
+.search-weather__mode svg {
+  z-index: 99;
+}
+.search-weather__mode svg:focus {
+  outline: none;
+}
+
+.selected-mode {
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  background-color: #e8e7fd;
+  border-radius: 50%;
+  z-index: 0;
+  transition: left 250ms;
+}
+
+.dark-mode__icon {
+  transform: rotateY(180deg);
+}
+
+.light-mode {
+  left: 0px;
+}
+.dark-mode {
+  left: 40px;
 }

@@ -16,3 +16,7 @@ body {
 .montserrat {
   font-family: "Montserrat", sans-serif;
 }
+
+.svg_icon {
+  height: 20px;
+}
