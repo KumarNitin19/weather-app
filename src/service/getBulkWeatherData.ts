@@ -5,8 +5,8 @@ export async function fetchData(city) {
   const data = await response.json();
 
   const newData = data?.list?.filter((val) => {
-    const hours = new Date(val.dt_txt).getHours();
-    if (hours <= 12 && hours >= 6) {
+    const date = new Date(val.dt_txt).getDate();
+    if (new Date().getDate() === date) {
       return val;
     }
   });
