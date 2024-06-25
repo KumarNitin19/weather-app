@@ -36,12 +36,11 @@ const BarGraph = ({ city = "" }) => {
 
     x.domain(
       d3.extent(dataReady, (d) => {
-        const date = new Date(d.date);
-        return date;
+        return new Date(d.date);
       })
     );
 
-    y.domain([0, d3.max(dataReady, (d) => d.rainPer)]);
+    y.domain([0, 100]);
 
     svg.append("g").attr("transform", `translate(0, ${height})`).call(xAxis);
     svg.append("g").call(yAxis);
@@ -51,13 +50,10 @@ const BarGraph = ({ city = "" }) => {
       .data(dataReady)
       .enter()
       .append("rect")
-      .attr("x", (d) => {
-        const date = new Date(d.date);
-        return x(date);
-      })
+      .attr("x", (d) => x(new Date(d.date)) - 6)
       .attr("y", (d) => y(d.rainPer))
       .attr("height", (d) => height - y(d.rainPer))
-      .attr("width", "10")
+      .attr("width", "12")
       .attr("fill", "#7b5ff7");
   }, []);
 
