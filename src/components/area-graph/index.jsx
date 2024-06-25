@@ -4,10 +4,10 @@ import { fetchData } from "../../service/getBulkWeatherData";
 const AreaGraph = ({ city = "" }) => {
   const [chartData, setChartData] = useState([]);
   const margins = {
-    top: 50,
-    right: 50,
-    bottom: 50,
-    left: 50,
+    top: 25,
+    right: 25,
+    bottom: 25,
+    left: 25,
   };
 
   const width = 960 - margins.left - margins.right;
