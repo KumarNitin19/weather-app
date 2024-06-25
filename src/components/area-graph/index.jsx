@@ -44,7 +44,7 @@ const AreaGraph = ({ city = "" }) => {
       .append("path")
       .datum(data)
       .attr("fill", "#e8e7fd")
-      .attr("stroke", "#7b5ff7")
+      .attr("stroke", "#6042e7")
       .attr("stroke-width", 2)
       .attr(
         "d",

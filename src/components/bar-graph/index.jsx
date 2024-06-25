@@ -54,7 +54,7 @@ const BarGraph = ({ city = "" }) => {
       .attr("y", (d) => y(d.rainPer))
       .attr("height", (d) => height - y(d.rainPer))
       .attr("width", "12")
-      .attr("fill", "#7b5ff7");
+      .attr("fill", "#6042e7");
   }, []);
 
   useEffect(() => {

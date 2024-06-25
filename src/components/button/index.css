@@ -7,13 +7,13 @@
   background: none;
 }
 .btn-contained {
-  background: #267eff;
+  background: #6042e7;
   color: white;
 }
 
 .btn-outlined {
-  border: 1px solid #267eff;
-  color: #267eff;
+  border: 1px solid #6042e7;
+  color: #6042e7;
   background-color: nonw;
 }
 
@@ -21,3 +21,5 @@
   border: none;
   background: none;
 }
+
+/* Light mode primary #7b5ff7 */

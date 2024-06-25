@@ -21,7 +21,7 @@ const PieChart = () => {
       .outerRadius(radius);
     const pie = d3.pie().value((d) => d.value);
     const dataReady = pie(d3?.entries(donutChartData));
-    const color = d3.scaleOrdinal().range(["#e8e7fd", "#7b5ff7"]);
+    const color = d3.scaleOrdinal().range(["#e8e7fd", "#6042e7"]);
     svg
       .selectAll(".arc")
       .data(dataReady)
