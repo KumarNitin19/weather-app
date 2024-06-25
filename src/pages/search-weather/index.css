@@ -4,6 +4,12 @@
   row-gap: 16px;
 }
 
+.search-weather__heading {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
 .search-weather__heading h6 {
   font-size: 28px;
   text-align: center;
@@ -27,4 +33,19 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   column-gap: 24px;
+}
+.city__location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.city__location-name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: capitalize;
+}
+
+.city__location svg {
+  height: 20px;
 }
