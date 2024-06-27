@@ -4,7 +4,6 @@ import Cloud from "../../assets/icons/clouds.png";
 import Rainy from "../../assets/icons/rainy.png";
 import Haze from "../../assets/icons/haze.png";
 import Sunny from "../../assets/icons/sun.png";
-import { Typography } from "../typography";
 
 const icons = {
   Clouds: Cloud,
