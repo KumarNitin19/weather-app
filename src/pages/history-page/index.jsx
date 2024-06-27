@@ -1,9 +1,9 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/button";
+import { CardWrapper } from "../../components/card-wrapper";
 import { Typography } from "../../components/typography";
 import { WeatherReport } from "../../components/weather-report";
-import { WeatherReportCard } from "../../components/weather-report-card";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import "./index.css";
 
@@ -34,9 +34,9 @@ export const HistoryPage = () => {
       <div className="history-page__weather-search-logs">
         {weatherHistory?.length ? (
           weatherHistory?.map((history) => (
-            <WeatherReportCard>
+            <CardWrapper>
               <WeatherReport weatherData={history} />
-            </WeatherReportCard>
+            </CardWrapper>
           ))
         ) : (
           <Typography variant="body2" color="grey" fontWeight="500">

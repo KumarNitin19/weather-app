@@ -1,4 +1,8 @@
 import "./index.css";
-export const WeatherReportCard = ({ children }) => {
-  return <div id="weather-report-card">{children}</div>;
+export const WeatherReportCard = () => {
+  return (
+    <div id="weather-report-card">
+      <div></div>
+    </div>
+  );
 };
