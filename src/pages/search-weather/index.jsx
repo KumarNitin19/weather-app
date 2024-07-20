@@ -1,6 +1,9 @@
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../../../env.contanst";
+import DarkMode from "../../assets/svg/DarkMode";
+import LightMode from "../../assets/svg/LightMode";
+import SearchIcon from "../../assets/svg/SearchIcon";
 import AreaGraph from "../../components/area-graph";
 import BarGraph from "../../components/bar-graph";
 import { Button } from "../../components/button";
@@ -76,28 +79,13 @@ export default function SearchWeather() {
             type="text"
             onChange={handleChange}
           />
-          <div className="search__icon">
-            <svg viewBox="0 0 24 24" tabindex="-1" title="Search">
-              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path>
-            </svg>
+          <div className="search__icon" onClick={getCityWeatherData}>
+            <SearchIcon />
           </div>
         </div>
         <div className="search-weather__mode" onClick={handleTheme}>
-          <svg
-            className="svg_icon"
-            viewBox="0 0 24 24"
-            tabindex="-1"
-            title="LightMode">
-            <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5M2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1m18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1M11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1m0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1M5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0z"></path>
-          </svg>
-          <svg
-            className="svg_icon dark-mode__icon"
-            viewBox="0 0 24 24"
-            tabindex="-1"
-            title="DrakMode">
-            <path d="M11.1 12.08c-2.33-4.51-.5-8.48.53-10.07C6.27 2.2 1.98 6.59 1.98 12c0 .14.02.28.02.42.62-.27 1.29-.42 2-.42 1.66 0 3.18.83 4.1 2.15 1.67.48 2.9 2.02 2.9 3.85 0 1.52-.87 2.83-2.12 3.51.98.32 2.03.5 3.11.5 3.5 0 6.58-1.8 8.37-4.52-2.36.23-6.98-.97-9.26-5.41"></path>
-            <path d="M7 16h-.18C6.4 14.84 5.3 14 4 14c-1.66 0-3 1.34-3 3s1.34 3 3 3h3c1.1 0 2-.9 2-2s-.9-2-2-2"></path>
-          </svg>
+          <LightMode />
+          <DarkMode />
           <div className={`selected-mode ${selectedTheme}-mode`}></div>
         </div>
       </div>
