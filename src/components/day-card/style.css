@@ -1,0 +1,21 @@
+.day__card {
+  border-radius: 16px;
+  border: "1px solid #0e0e0e";
+  overflow: hidden;
+  width: fit-content;
+}
+.day__card-active {
+  background-color: #e8e7fd;
+}
+.day__card-active-heading {
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.day__card .temprature-and-weather {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.day__card-active-body {
+  padding: 16px;
+}
