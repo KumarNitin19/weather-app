@@ -13,9 +13,9 @@ type Props = {
     | "caption";
   color?: string;
   children: React.ReactNode | string;
-  fontFamily: "oswald" | "montserrat";
+  fontFamily?: "oswald" | "montserrat";
   className?: string;
-  fontWeight:
+  fontWeight?:
     | "100"
     | "200"
     | "300"
@@ -25,7 +25,7 @@ type Props = {
     | "700"
     | "800"
     | "900";
-  textAlign: "start" | "center" | "auto";
+  textAlign?: "start" | "center" | "auto";
 };
 
 export const Typography: React.FC<Props> = (props) => {
