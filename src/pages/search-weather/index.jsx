@@ -12,6 +12,7 @@ import { Input } from "../../components/input";
 import PieChart from "../../components/pie-chart";
 import { Typography } from "../../components/typography";
 import { WeatherReport } from "../../components/weather-report";
+import WeeklyCard from "../../components/weekly-cards";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import "./index.css";
 
@@ -89,6 +90,7 @@ export default function SearchWeather() {
           <div className={`selected-mode ${selectedTheme}-mode`}></div>
         </div>
       </div>
+      <WeeklyCard />
 
       {Object.keys(weatherData)?.length && !error ? (
         <WeatherReport weatherData={weatherData} />
@@ -101,6 +103,7 @@ export default function SearchWeather() {
           Please search for a city, use above input box and click search...
         </Typography>
       )}
+
       <div className="widget__first">
         {weatherData?.name && (
           <CardWrapper>

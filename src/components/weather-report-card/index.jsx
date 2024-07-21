@@ -1,17 +1,7 @@
+import { WEATHER_ICONS } from "../../contants/commonConstant";
 import { Typography } from "../typography";
 import "./index.css";
-import Cloud from "../../assets/icons/clouds.png";
-import Rainy from "../../assets/icons/rainy.png";
-import Haze from "../../assets/icons/haze.png";
-import Sunny from "../../assets/icons/sun.png";
 
-const icons = {
-  Clouds: Cloud,
-  Haze: Haze,
-  rainy: Rainy,
-  sunny: Sunny,
-  Smoke: Cloud,
-};
 export const WeatherReportCard = () => {
   return (
     <div id="weather-report-card">
@@ -35,7 +25,7 @@ export const WeatherReportCard = () => {
             </div>
           </div>
           <img
-            src={icons[weatherData?.weather[0]?.main]}
+            src={WEATHER_ICONS[weatherData?.weather[0]?.main]}
             alt="Weather icon"
             height={75}
             width={75}
