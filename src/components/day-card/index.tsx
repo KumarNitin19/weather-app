@@ -1,6 +1,7 @@
 import React from "react";
 import { WEATHER_ICONS } from "../../contants/commonConstant";
 import { Typography } from "../typography";
+import "./style.css";
 
 type Props = {
   active: boolean;
@@ -29,7 +30,7 @@ export default function DayCard(props: Props) {
         </div>
         <div className="day__card-active-body">
           <div className="temprature-and-weather">
-            <Typography variant="h5">16c</Typography>
+            <Typography variant="h3">16° C</Typography>
             {weatherData?.weather && (
               <img
                 src={WEATHER_ICONS[weatherData?.weather]}
@@ -38,6 +39,32 @@ export default function DayCard(props: Props) {
                 width={75}
               />
             )}
+          </div>
+          <div className="weather-details">
+            <div className="key_value">
+              <Typography variant="caption">Feel</Typography>
+              <Typography variant="caption">18°</Typography>
+            </div>
+            <div className="key_value">
+              <Typography variant="caption">Wind NE</Typography>
+              <Typography variant="caption">5-8 km/h</Typography>
+            </div>
+            <div className="key_value">
+              <Typography variant="caption">Pressure</Typography>
+              <Typography variant="caption">1000</Typography>
+            </div>
+            <div className="key_value">
+              <Typography variant="caption">Humidity</Typography>
+              <Typography variant="caption">51%</Typography>
+            </div>
+            <div className="key_value">
+              <Typography variant="caption">Sunrise</Typography>
+              <Typography variant="caption">6:02 AM</Typography>
+            </div>
+            <div className="key_value">
+              <Typography variant="caption">Sunset</Typography>
+              <Typography variant="caption">9:18 PM</Typography>
+            </div>
           </div>
         </div>
       </div>

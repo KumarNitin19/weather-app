@@ -13,9 +13,22 @@
 }
 .day__card .temprature-and-weather {
   display: flex;
-  gap: 8px;
+  gap: 32px;
   align-items: center;
 }
 .day__card-active-body {
   padding: 16px;
+  display: grid;
+  gap: 16px;
+}
+
+.day__card .weather-details {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 12px;
+  row-gap: 12px;
+}
+.day__card .weather-details .key_value {
+  display: flex;
+  gap: 8px;
 }

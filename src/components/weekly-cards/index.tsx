@@ -1,5 +1,5 @@
 import React from "react";
-import { WEEKLY_DATA } from "../../mockData.js/weeklyData";
+import { WEEKLY_DATA } from "../../mockData/weeklyData";
 import DayCard from "../day-card";
 export default function WeeklyCard() {
   return (
