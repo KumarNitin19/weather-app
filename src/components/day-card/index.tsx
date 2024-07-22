@@ -89,6 +89,16 @@ export default function DayCard(props: Props) {
           {weatherData?.day?.slice(0, 3)}
         </Typography>
       </div>
+      <div className="day__card-body">
+        {weatherData?.weather && (
+          <img
+            src={WEATHER_ICONS[weatherData?.weather]}
+            alt="Weather icon"
+            height={75}
+            width={75}
+          />
+        )}
+      </div>
     </div>
   );
 }
