@@ -82,11 +82,12 @@ export default function DayCard(props: Props) {
     );
   }
   return (
-    <div className="day__card">
+    <div className="day__card day__card-unActive">
       <div className="day__card-heading">
-        <Typography variant="body1" fontWeight="500">
+        <Typography variant="body1" fontWeight="500" textAlign="center">
           {weatherData?.day?.slice(0, 3)}
         </Typography>
+        <div className="divider"></div>
       </div>
       <div className="day__card-body">
         {weatherData?.weather && (
