@@ -91,7 +91,6 @@ export default function SearchWeather() {
         </div>
       </div>
       <WeeklyCard />
-
       {Object.keys(weatherData)?.length && !error ? (
         <WeatherReport weatherData={weatherData} />
       ) : error ? (
@@ -103,7 +102,6 @@ export default function SearchWeather() {
           Please search for a city, use above input box and click search...
         </Typography>
       )}
-
       <div className="widget__first">
         {weatherData?.name && (
           <CardWrapper>
@@ -114,19 +112,35 @@ export default function SearchWeather() {
           <BarGraph city={weatherData?.name} />
         </CardWrapper>
       </div>
-      <CardWrapper>
-        <div>
+      <div className="center_widget">
+        <CardWrapper>
           <div>
-            <Typography variant="body2" fontWeight="500" color="#6e6d7a">
-              Rain Chance
-            </Typography>
-            <Typography variant="body2" fontWeight="500" color="#6e6d7a">
-              Low
-            </Typography>
+            <div>
+              <Typography variant="body2" fontWeight="500" color="#6e6d7a">
+                Rain Chance
+              </Typography>
+              <Typography variant="caption" color="#6e6d7a">
+                Low
+              </Typography>
+            </div>
+            <PieChart id="pie_chart_1" />
           </div>
-          <PieChart />
-        </div>
-      </CardWrapper>
+        </CardWrapper>
+
+        <CardWrapper>
+          <div>
+            <div>
+              <Typography variant="body2" fontWeight="500" color="#6e6d7a">
+                Rain Chance
+              </Typography>
+              <Typography variant="caption" color="#6e6d7a">
+                Low
+              </Typography>
+            </div>
+            <PieChart id="pie_chart_2" />
+          </div>
+        </CardWrapper>
+      </div>
     </div>
   );
 }

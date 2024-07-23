@@ -114,3 +114,10 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.center_widget {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 12px;
+  width: 100%;
+}
