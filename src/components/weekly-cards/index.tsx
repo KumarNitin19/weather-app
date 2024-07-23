@@ -1,4 +1,3 @@
-import React from "react";
 import { WEEKLY_DATA } from "../../mockData/weeklyData";
 import DayCard from "../day-card";
 import "./style.css";

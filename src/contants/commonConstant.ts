@@ -3,7 +3,7 @@ import Rainy from "../assets/icons/rainy.png";
 import Haze from "../assets/icons/haze.png";
 import Sunny from "../assets/icons/sun.png";
 
-export const WEATHER_ICONS = {
+export const WEATHER_ICONS: { [key: string]: string } = {
   Clouds: Cloud,
   Haze: Haze,
   rainy: Rainy,
