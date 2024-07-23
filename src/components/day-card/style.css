@@ -4,10 +4,12 @@
   overflow: hidden;
   width: fit-content;
   background-color: rgba(0, 0, 0, 0.02);
+  padding: 12px;
 }
 .day__card-active {
   background-color: #e8e7fd;
   border: none;
+  padding: 0;
 }
 .day__card-active-heading {
   padding: 12px;
