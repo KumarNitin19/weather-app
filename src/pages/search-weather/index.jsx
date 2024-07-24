@@ -6,7 +6,6 @@ import LightMode from "../../assets/svg/LightMode";
 import SearchIcon from "../../assets/svg/SearchIcon";
 import AreaGraph from "../../components/area-graph";
 import BarGraph from "../../components/bar-graph";
-import { Button } from "../../components/button";
 import { CardWrapper } from "../../components/card-wrapper";
 import { Input } from "../../components/input";
 import PieChart from "../../components/pie-chart";
@@ -14,6 +13,7 @@ import { Typography } from "../../components/typography";
 import { WeatherReport } from "../../components/weather-report";
 import WeeklyCard from "../../components/weekly-cards";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
+import HistoryCardWidget from "../../components/history-cards-widget";
 import "./index.css";
 
 export default function SearchWeather() {
@@ -141,6 +141,7 @@ export default function SearchWeather() {
           </div>
         </CardWrapper>
       </div>
+      <HistoryCardWidget />
     </div>
   );
 }
