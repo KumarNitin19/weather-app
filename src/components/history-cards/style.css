@@ -1,0 +1,10 @@
+.history_card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.history_card-location {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
