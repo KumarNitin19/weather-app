@@ -1,0 +1,4 @@
+.history_card_widget {
+  display: grid;
+  row-gap: 12px;
+}
